@@ -81,16 +81,16 @@ jobs:
       # https://github.com/nttld/setup-ndk/commit/831db5b02a0f0cab80614619efe461a3dcc140e6
       # but `dist/*` has not been rebuilt yet. Build it.
       # https://github.com/nttld/setup-ndk/tree/main/dist
-      - name: Locally rebuilt setup-ndk
-        run: |
-          npm -prefix ./setup-ndk install
-          npm -prefix ./setup-ndk run all
+#      - name: Locally rebuilt setup-ndk
+#        run: |
+#          npm -prefix ./setup-ndk install
+#          npm -prefix ./setup-ndk run all
       # Install using locally rebuilt setup-ndk
-      - name: Setup Android NDK r21d
-        uses: ./setup-ndk
-      #- uses: nttld/setup-ndk@v1
+#      - name: Setup Android NDK r21d
+#        uses: ./setup-ndk
+      - uses: nttld/setup-ndk@v1
         with:
-          ndk-version: r21d
+          ndk-version: r21e
 
 # waiting github.com/jurplel/install-qt-action/issues/63
       - name: Install Qt Android
